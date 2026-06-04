@@ -151,6 +151,9 @@ describe('Customer domain events tests', () => {
     expect(
       eventDispatcher.getEventHandlers['CustomerCreatedEvent'].length,
     ).toBe(1);
+    expect(
+      eventDispatcher.getEventHandlers['CustomerCreatedEvent'][0],
+    ).toMatchObject(eventHandler2);
   });
 
   it('should unregister CustomerAddressChangedEvent handler', () => {
